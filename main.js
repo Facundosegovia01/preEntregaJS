@@ -31,7 +31,7 @@ function agregarProducto(id) {
   const producto = productos.find(item => item.id === id);
   let carrito = JSON.parse(localStorage.getItem("carrito"));
   
-  // Verifica que el carrito sea un array, si no lo es, inicialízalo como un array vacío
+  // Verifica que el carrigggggggggggggggggggto sea un array, si no lo es, inicialízalo como un array vacío
   if (!Array.isArray(carrito)) {
       carrito = [];
   }
@@ -55,4 +55,3 @@ function totalProductos() {
 
 renderProductos(productos);
 totalProductos();
-// La llamada a agregarProducto(); sin argumentos se elimina.
