@@ -1,3 +1,4 @@
+
 const contenedorTotal = document.querySelector("#total");
 
 function vaciarCarrito() {
@@ -61,19 +62,25 @@ function renderCarrito() {
             
               Total a pagar: $${total}
             </div>
-            <button class="border-2 border-purple-200 bg-purple-300 rounded-xl text-xl p-3">Finalizar Compra</button>
+            <button class="border-2 border-purple-200 bg-purple-300 rounded-xl text-xl p-3"><a href="#" >Finalizar Compra</a></button>
           </div>`;
+
     } else {
-        contenidoHTML = `<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-        <strong class="font-bold flex justify-center">No tienes Productos en el Carrito</strong>
-        <a href="index.html" class="text-red-100 flex justify-center mt-2 border border-red-400 bg-red-700 rounded-xl">Ir a Productos</a>
-      </div>`;
-        
-    
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "No tienes productos en el carrito",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText : '<a href="index.html">Ir a Productos</a>'
+          })
+          contenedorTotal.innerHTML = ``
     }
+
 
     document.getElementById("contenido").innerHTML = contenidoHTML;
 }
 
-renderCarrito();
 
+
+
+renderCarrito();
